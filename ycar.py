@@ -14,6 +14,25 @@ import colorama
 from colorama import Fore, Style
 colorama.init()
 pygame.init()
+
+#Clear
+def lp():
+    if os.name == 'posix':
+        os.system('clear')
+    elif os.name == 'nt':
+        os.system('cls')
+
+print('Iniciar interface gráfica? (BETA) \nS para Sim \nN para Não')
+print()
+interput = input('Digite: ').upper().strip()
+lp()
+
+if interput in ['S']:
+    from interface_inicial import criar_tela_inicial
+
+    if __name__ == "__main__":
+        criar_tela_inicial()
+
 dataday = time.strftime('%d/%m/%Y')
 
 #Definições
@@ -152,12 +171,6 @@ def Processamento_op2p1():
         print(n1, '/ 7 = {:.2f}'.format(n1/7), '|', n1, '/ 8 = {:.2f}'.format(n1/8))
         print(n1, '/ 9 = {:.2f}'.format(n1/9), '|', n1, '/ 10 = {:.2f}'.format(n1/10))
 
-#Clear
-def lp():
-    if os.name == 'posix':
-        os.system('clear')
-    elif os.name == 'nt':
-        os.system('cls')
 
 #Boas-vindas #Versão
 print('-'*37)
