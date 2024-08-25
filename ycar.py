@@ -176,10 +176,9 @@ while True:
             print()
             print('Opção 1 - Calculadora')
             print('Opção 2 - Gerador de senha')
-            print('Opção 3 - Consultar cotação de moedas')
-            print('Opção 4 - Músicas')
-            print('Opção 5 - Informações')
-            print('Opção 6 - GANHE 1 MILHÃO DE REAIS')
+            print('Opção 3 - Músicas')
+            print('Opção 4 - Informações')
+            print('Opção 5 - GANHE 1 MILHÃO DE REAIS')
             print()
             serv = str(input('Digite o número da opção desejada: ')).strip()
             lp()
@@ -188,12 +187,10 @@ while True:
             print(Fore.RED+'ERRO'+Fore.RESET)
             print('Não foi possível entender o seu comando. Por favor, digite apenas 1, 2, 3 ou 4! Tente novamente.')
             print()
-        if serv in ['1', '2', '3', '4', '6']:
-            break
 
-        #Função 5
+        #Função 3
         #Escolha de música
-        if serv == '5':
+        if serv in ['3']:
             while True:
                 while True:
                     print('{}SELETOR DE MÚSICAS{}'.format('\033[4m', '\033[m'))
@@ -302,7 +299,7 @@ while True:
 
         #Função 6
         #Informações
-        elif serv == '6':
+        elif serv == '4':
             print('{}INFORMAÇÕES{}'.format('\033[4m', '\033[m'))
             print()
             print('Este é um programa desenvolvido por pura diversão como principal finalidade o aprimoramento de técnicas.')
@@ -316,6 +313,9 @@ while True:
             print()
             input('Pressione ENTER para voltar.')
             lp()
+
+        else:
+            break
 
     #Função 1
     #Início - Entrada de dados
@@ -762,13 +762,22 @@ while True:
                 continue     
 
         #Jogos
-        #Função 4
-        elif serv in ['4']:
-            print('Opção 1 - Pedra')
-            print('Opção 2 - Papel')
-            print('Opção 3 - Tesoura')
-            play = str(input('Escolha: ')).strip().upper()
-            lp()
+        #Função 6
+        elif serv in ['6']:
+            while True:
+                print('Opção 1 - Pedra')
+                print('Opção 2 - Papel')
+                print('Opção 3 - Tesoura')
+                play = str(input('Escolha: ')).strip().upper()
+                lp()
+
+                if play in ['1','2','3']:
+                    break
+                else:
+                    lp()
+                    print(Fore.RED+'ERRO'+Fore.RESET)
+                    print('Não foi possível entender o seu comando. Digite apenas uma das opções! Tente novamente.')
+                    print()
 
             def gs(comp, carc):
                 joken = ''
@@ -816,46 +825,47 @@ while True:
                 print(Fore.YELLOW+'TESOURA'+Fore.RESET, 'X', Fore.YELLOW+'TESOURA'+Fore.RESET)
                 print('EMPATE!')
 
-            #Repetição opcional 4
-            while True:
+                #Repetição opcional 4
                 while True:
-                    print()
-                    print('Gostaria de jogar novamente?\n\nS para Sim\nN para Não')
-                    print()
-                    bfim = str(input('Digite: ')).upper().strip()
-                    if bfim in ['S', 'N']:
-                        lp()
-                        break
-                    lp()
-                    print(Fore.RED+'ERRO'+Fore.RESET)
-                    print('Não foi possível entender o seu comando. Por favor, digite apenas "S" ou "N"! Tente novamente.')
-                if bfim in ['S']:
-                    lp()
-                    break
-                else:
                     while True:
-                        print('Gostaria de retornar ao seletor de funções?\n\nS para Sim\nN para Não (encerrar o programa)')
                         print()
-                        cfim = str(input('Digite: ')).strip()
-                        if cfim in ['s', 'S', 'n', 'N']:
+                        print('Gostaria de jogar novamente?\n\nS para Sim\nN para Não')
+                        print()
+                        bfim = str(input('Digite: ')).upper().strip()
+                        if bfim in ['S', 'N']:
                             lp()
                             break
                         lp()
                         print(Fore.RED+'ERRO'+Fore.RESET)
                         print('Não foi possível entender o seu comando. Por favor, digite apenas "S" ou "N"! Tente novamente.')
-                        print()
+                    if bfim in ['S']:
+                        lp()
+                        break
+                    else:
+                        while True:
+                            print('Gostaria de retornar ao seletor de funções?\n\nS para Sim\nN para Não (encerrar o programa)')
+                            print()
+                            cfim = str(input('Digite: ')).strip()
+                            if cfim in ['s', 'S', 'n', 'N']:
+                                lp()
+                                break
+                            lp()
+                            print(Fore.RED+'ERRO'+Fore.RESET)
+                            print('Não foi possível entender o seu comando. Por favor, digite apenas "S" ou "N"! Tente novamente.')
+                            print()
+                        break
+                if bfim in ['n', 'N'] and cfim in ['n', 'N']:
+                    lp()
+                    print('Obrigado por testar o script ;)')
+                    print()
+                    input('Pressione ENTER para fechar.')
+                    exit()
+                elif bfim in ['n', 'N'] and cfim in ['s', 'S']:
                     break
-            if bfim in ['n', 'N'] and cfim in ['n', 'N']:
-                lp()
-                print('Obrigado por testar o script ;)')
-                print()
-                input('Pressione ENTER para fechar.')
-                exit()
-            elif bfim in ['n', 'N'] and cfim in ['s', 'S']:
-                break
-            else:
-                continue
+                else:
+                    continue
 
+        #É JACARÉ OU TRONCO?
         else:
             webbrowser.get(opera).open_new_tab('https://www.youtube.com/watch?v=6QlQ7CRGTe4')
 
